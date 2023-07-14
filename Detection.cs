@@ -15,11 +15,14 @@ namespace Connect_4
     {
         static int turn = 0;
         static string piece;
+
         static int row;
         static int column;
 
         //PlayerTurn will detect which players turn it is and will then change the colour and the piece accordingly
-        //After this it will take the input for what column that the player wants to place their piece in and check if it is clear and then place the piece
+        //After this it will take the input for what column that the player wan
+        //ts to place their piece in and check if it is
+        //and then place the piece
         public static void PlayerTurn()
         {
             Console.Clear();
@@ -38,11 +41,14 @@ namespace Connect_4
             Console.WriteLine("\nWhich column?");
             column = Convert.ToInt32(Console.ReadLine());
             column--;
-            for (row = 1; row < GameGrid.board.GetLength(0) - 1; row++)
+            for (row = 1; row <= GameGrid.board.GetLength(0); row++)
             {
+                var length = GameGrid.board.GetLength(0);
+                
                 if (GameGrid.board[GameGrid.board.GetLength(0) - row, column] == " ")
                 {
                     GameGrid.board[GameGrid.board.GetLength(0) - row, column] = piece;
+                    Console.WriteLine($"{row}{column}");
                     break;
                 }
             }
@@ -64,8 +70,8 @@ namespace Connect_4
                     counter++;
                     if (counter == 4)
                     {
-                        Program.win = true;
                         Console.Clear();
+                        Program.win = true;
                         GameGrid.PrintBoard();
                         Console.WriteLine("\n __     __                               _         \r\n \\ \\   / /                              (_)        \r\n  \\ \\_/ /    ___    _   _    __      __  _   _ __  \r\n   \\   /    / _ \\  | | | |   \\ \\ /\\ / / | | | '_ \\ \r\n    | |    | (_) | | |_| |    \\ V  V /  | | | | | |\r\n    |_|     \\___/   \\__,_|     \\_/\\_/   |_| |_| |_|");
                     }
@@ -89,8 +95,8 @@ namespace Connect_4
                     counter++;
                     if (counter == 4)
                     {
-                        Program.win = true;
                         Console.Clear();
+                        Program.win = true;
                         GameGrid.PrintBoard();
                         Console.WriteLine("\n __     __                               _         \r\n \\ \\   / /                              (_)        \r\n  \\ \\_/ /    ___    _   _    __      __  _   _ __  \r\n   \\   /    / _ \\  | | | |   \\ \\ /\\ / / | | | '_ \\ \r\n    | |    | (_) | | |_| |    \\ V  V /  | | | | | |\r\n    |_|     \\___/   \\__,_|     \\_/\\_/   |_| |_| |_|");
                     }
@@ -101,11 +107,15 @@ namespace Connect_4
                 }
             }
         }
+
+        //DIAGONAL
+        //To check if the diagonal pieces make a 4
+
         public static void Diagonal()
         {
-            for (int y = 0; y < 6; y++)
+            for (int y = 0; y < 3; y++)
             {
-                for (int x = 0; x < 7; x++)
+                for (int x = 0; x < 6; x++)
                 {
 
                     if (GameGrid.board[y, x] == piece)
@@ -120,8 +130,8 @@ namespace Connect_4
                                 {
                                     if (GameGrid.board[y + 3, x - 3] == piece)
                                     {
-                                        Program.win = true;
                                         Console.Clear();
+                                        Program.win = true;
                                         GameGrid.PrintBoard();
                                         Console.WriteLine("\n __     __                               _         \r\n \\ \\   / /                              (_)        \r\n  \\ \\_/ /    ___    _   _    __      __  _   _ __  \r\n   \\   /    / _ \\  | | | |   \\ \\ /\\ / / | | | '_ \\ \r\n    | |    | (_) | | |_| |    \\ V  V /  | | | | | |\r\n    |_|     \\___/   \\__,_|     \\_/\\_/   |_| |_| |_|");
                                     }
@@ -139,8 +149,8 @@ namespace Connect_4
                                 {
                                     if (GameGrid.board[y + 3, x + 3] == piece)
                                     {
-                                        Program.win = true;
                                         Console.Clear();
+                                        Program.win = true;
                                         GameGrid.PrintBoard();
                                         Console.WriteLine("\n __     __                               _         \r\n \\ \\   / /                              (_)        \r\n  \\ \\_/ /    ___    _   _    __      __  _   _ __  \r\n   \\   /    / _ \\  | | | |   \\ \\ /\\ / / | | | '_ \\ \r\n    | |    | (_) | | |_| |    \\ V  V /  | | | | | |\r\n    |_|     \\___/   \\__,_|     \\_/\\_/   |_| |_| |_|");
                                     }
