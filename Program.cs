@@ -16,6 +16,7 @@ namespace Connect_4
         public static bool win = false;
         public static void Main()
         {
+            //This is the loop that will constantly repeat until a player wins and win becomes set to true
             while (Program.win == false)
             {
                 Detection.PlayerTurn();
@@ -23,6 +24,11 @@ namespace Connect_4
                 Detection.Vertical();
                 Detection.Diagonal();
             }
+
+            //This should occur when the game has been won and it will show the board and an ascii art message
+            Console.Clear();
+            GameGrid.PrintBoard();
+            Console.WriteLine("\n __     __                               _         \r\n \\ \\   / /                              (_)        \r\n  \\ \\_/ /    ___    _   _    __      __  _   _ __  \r\n   \\   /    / _ \\  | | | |   \\ \\ /\\ / / | | | '_ \\ \r\n    | |    | (_) | | |_| |    \\ V  V /  | | | | | |\r\n    |_|     \\___/   \\__,_|     \\_/\\_/   |_| |_| |_|");
         }
 
     }
