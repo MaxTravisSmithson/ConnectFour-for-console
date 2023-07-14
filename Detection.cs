@@ -70,10 +70,7 @@ namespace Connect_4
                     counter++;
                     if (counter == 4)
                     {
-                        Console.Clear();
                         Program.win = true;
-                        GameGrid.PrintBoard();
-                        Console.WriteLine("\n __     __                               _         \r\n \\ \\   / /                              (_)        \r\n  \\ \\_/ /    ___    _   _    __      __  _   _ __  \r\n   \\   /    / _ \\  | | | |   \\ \\ /\\ / / | | | '_ \\ \r\n    | |    | (_) | | |_| |    \\ V  V /  | | | | | |\r\n    |_|     \\___/   \\__,_|     \\_/\\_/   |_| |_| |_|");
                     }
                 }
                 else
@@ -95,10 +92,7 @@ namespace Connect_4
                     counter++;
                     if (counter == 4)
                     {
-                        Console.Clear();
                         Program.win = true;
-                        GameGrid.PrintBoard();
-                        Console.WriteLine("\n __     __                               _         \r\n \\ \\   / /                              (_)        \r\n  \\ \\_/ /    ___    _   _    __      __  _   _ __  \r\n   \\   /    / _ \\  | | | |   \\ \\ /\\ / / | | | '_ \\ \r\n    | |    | (_) | | |_| |    \\ V  V /  | | | | | |\r\n    |_|     \\___/   \\__,_|     \\_/\\_/   |_| |_| |_|");
                     }
                 }
                 else
@@ -130,10 +124,7 @@ namespace Connect_4
                                 {
                                     if (GameGrid.board[y + 3, x - 3] == piece)
                                     {
-                                        Console.Clear();
                                         Program.win = true;
-                                        GameGrid.PrintBoard();
-                                        Console.WriteLine("\n __     __                               _         \r\n \\ \\   / /                              (_)        \r\n  \\ \\_/ /    ___    _   _    __      __  _   _ __  \r\n   \\   /    / _ \\  | | | |   \\ \\ /\\ / / | | | '_ \\ \r\n    | |    | (_) | | |_| |    \\ V  V /  | | | | | |\r\n    |_|     \\___/   \\__,_|     \\_/\\_/   |_| |_| |_|");
                                     }
                                 }
                             }
@@ -149,10 +140,7 @@ namespace Connect_4
                                 {
                                     if (GameGrid.board[y + 3, x + 3] == piece)
                                     {
-                                        Console.Clear();
                                         Program.win = true;
-                                        GameGrid.PrintBoard();
-                                        Console.WriteLine("\n __     __                               _         \r\n \\ \\   / /                              (_)        \r\n  \\ \\_/ /    ___    _   _    __      __  _   _ __  \r\n   \\   /    / _ \\  | | | |   \\ \\ /\\ / / | | | '_ \\ \r\n    | |    | (_) | | |_| |    \\ V  V /  | | | | | |\r\n    |_|     \\___/   \\__,_|     \\_/\\_/   |_| |_| |_|");
                                     }
                                 }
                             }
